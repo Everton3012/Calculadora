@@ -1,5 +1,6 @@
 package br.com.Everton3012.calc.visao;
 
+import br.com.Everton3012.calc.modelo.Memoria;
 import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -82,7 +83,7 @@ public class Teclado extends JPanel implements ActionListener {
     public void actionPerformed(java.awt.event.ActionEvent e) {
         if (e.getSource() instanceof JButton) {
             JButton botao = (JButton) e.getSource();
-            System.out.println("Botão pressionado: " + botao.getText());
+            Memoria.getInstancia().processarComando(botao.getText());
         }
 
     }
